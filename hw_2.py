@@ -5,16 +5,15 @@ names = ['dhhgfjjhsa.txt', 'hhdsdahffh.txt', 'afdgdhjsds.txt',
          'agsgdjhhfj.txt', 'gafadhadda.txt', 'hdagajfhhj.txt',
          'fhjhafhdfa.txt']
 
-my_file = open(random.choice(names), 'w', encoding='utf-8')
+my_file = open(random.choice(names), 'w+', encoding='utf-8')
 
 def func(files):
     for i in files:
             try:
-                with open(i, 'r', encoding='utf-8') as f:
-                    return f.readlines()
+                f=open(i, 'r+', encoding='utf-8')
             except FileNotFoundError:
                 print("There is no such file")
             else:
-                i.write("Bermet")
-                i.close()
+                f.write("Bermet")
+                f.close()
 print (func(names))
